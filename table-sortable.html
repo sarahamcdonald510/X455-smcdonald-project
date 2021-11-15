@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>Table Sortable</title>
+  <style>
+    table#your-table-items {
+      border-collapse: collapse;
+      /* in inspector mode - easier to see the difference between collapse and no collapse */
+      text-align:left; font-family:Arial, Helvetica, sans-serif; font-size:large ;
+    }
+
+    table#your-table-items th:nth-child(1),
+    table#your-table-items td:nth-child(1) {
+      width: 30%;
+    }
+
+    table#your-table-items th:nth-child(2),
+    table#your-table-items td:nth-child(2) {
+      width: 30%;
+    }
+
+    table#your-table-items th:nth-child(3),
+    table#your-table-items td:nth-child(3) {
+      width: 30%;
+    }
+
+    table#your-table-items th:nth-child(4),
+    table#your-table-items td:nth-child(4) {
+      width: 100%;
+    }
+
+    table#your-table-items thead {
+      font-size:larger;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table#your-table-items thead th {
+            padding: 10px;
+    }
+
+    table#your-table-items thead th:hover {
+      cursor: pointer;
+    }
+
+    table#your-table-items thead th.tablesorter-headerAsc,
+    table#your-table-items thead th.tablesorter-headerDesc 
+
+    table#your-table-items tbody {font-family: Helvetica;
+      font-size:larger;
+      line-height: 15px;
+    }
+
+    /*** make sure table#your-table-items tbody tr:nth-child(even) defined before table#your-table-items tbody tr:hover */
+    /*** otherwise, it would need to define table#your-table-items tbody tr:nth-child(even):hover*/
+    table#your-table-items tbody tr:nth-child(even) 
+
+    table#your-table-items tbody tr:hover 
+
+    table#your-table-items tbody td {
+      padding: 8px 20px; 
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <article>
+    <div>
+      <h1>TOUR</h1>
+      
+   
+      
+      <table id="your-table-items">
+        <thead>
+          <tr>
+            <th>DATES</th>
+            <th>CITY</th>
+            <th>VENUE</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <style>font-family: Helvetica font-size: larger </style>
+          <tr>
+            <td>January 23, 2022</td>
+            <td>Birmingham, AL</td>
+            <td>Iron City </td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 22, 2022</td>
+            <td>Atlanta, GA</td>
+            <td>The Eastern</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 21, 2022</td>
+            <td>Raleigh, NC</td>
+            <td>The Ritz</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 21, 2022</td>
+            <td>Raleigh, NC</td>
+            <td>The Ritz</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 20, 2022</td>
+            <td>Asheville, NC</td>
+            <td>The Orange Peel</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 16, 2022</td>
+            <td>Louisville, KY</td>
+            <td>Headliners Music Hall</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 14, 2022</td>
+            <td>Nashville, TN</td>
+            <td>The Basement East</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 11, 2022</td>
+            <td>Las Vegas, NV</td>
+            <td>Backstage Bar & Billiards</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 9, 2022</td>
+            <td>Solana Beach, CA</td>
+            <td>Belly Up Tavern</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 8, 2022</td>
+            <td>Visalia, CA</td>
+            <td>The Cellar Door</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button> </td>
+          </tr>
+          <tr>
+            <td>January 7, 2022</td>
+            <td>San Francisco, CA</td>
+            <td>The Filmore</td>
+            <td><button type="button" onclick="alert('Hello world!')">FIND TICKETS</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+  <!-- jquery.min.js should be loaded before jquery.tablesorter.min.js because tablesorter requires basice jquery -->
+  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/JavaScript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+  <!-- BEG JavaScript -->
+  <script>
+    $(document).ready(function () {
+      $("table#your-table-items").tablesorter({
+        sortList: [[2, 0]],
+        CssAsc: "tablesorter-headerAsc",
+        CssDesc: "tablesorter-headerDesc"
+      });
+    });
+  </script>
+  <!-- END JavaScript -->
+</body>
+
+</html>
